@@ -20,7 +20,9 @@ class NewsListViewBuilder extends StatelessWidget {
         if (state is NewsLoading) {
           return const SliverToBoxAdapter(
             child: Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.black,
+              ),
             ),
           );
         } else if (state is NewsFailure) {
