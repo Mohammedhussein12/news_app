@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import '../../models/articles_model.dart';
 import '../../services/news_service.dart';
-
 part 'news_state.dart';
 
 class NewsCubit extends Cubit<NewsState> {
