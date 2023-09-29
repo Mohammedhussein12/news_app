@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/articles_model.dart';
+import 'package:news_app/views/web_view.dart';
 import 'news_tile.dart';
 
 class NewsListView extends StatelessWidget {
@@ -12,7 +13,17 @@ class NewsListView extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         childCount: articles.length,
-        (context, index) => NewsTile(articleModel: articles[index]),
+        (context, index) => GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => WebViewScreen(url: articles[index].url),
+              ),
+            );
+          },
+          child: NewsTile(articleModel: articles[index]),
+        ),
       ),
     );
   }
